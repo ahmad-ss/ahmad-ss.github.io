@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Setiyanto | Portfolio</title>
+    <!-- UnoCSS Runtime -->
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { min-height: 100vh; }
+        .fade-in-up { opacity: 0; transform: translateY(18px); animation: fadeInUp 0.85s ease forwards; }
+        .fade-in-up.delay-100 { animation-delay: 0.1s; }
+        .fade-in-up.delay-200 { animation-delay: 0.2s; }
+        .fade-in-up.delay-300 { animation-delay: 0.3s; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .mesh-bg { background-image: radial-gradient(circle at top right, rgba(59,130,246,0.18), transparent 28%), radial-gradient(circle at 20% 25%, rgba(148,163,184,0.12), transparent 16%); }
+        .dark .mesh-bg { background-image: radial-gradient(circle at top right, rgba(96,165,250,0.2), transparent 28%), radial-gradient(circle at 20% 25%, rgba(148,163,184,0.08), transparent 16%); }
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: flex; }
+        .carousel-container::-webkit-scrollbar { display: none; }
+        .carousel-container { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-slate-100">
+
+    <!-- Header Section -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:px-5">
+            <a href="#home" class="text-lg font-black tracking-tight text-zinc-950 dark:text-slate-100 md:text-xl">Asen Madto</a>
+
+            <div class="hidden md:flex items-center justify-center gap-3">
+                <a href="https://github.com" target="_blank" rel="noreferrer" class="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-blue-400 hover:text-blue-600 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-300 dark:hover:text-sky-300">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-blue-400 hover:text-blue-600 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-300 dark:hover:text-sky-300">
+                    <i data-lucide="linkedin"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" class="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-blue-400 hover:text-blue-600 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-300 dark:hover:text-sky-300">
+                    <i data-lucide="instagram"></i>
+                </a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-6">
+                <nav class="flex items-center gap-6 text-sm font-bold uppercase tracking-[0.22em] text-zinc-800 dark:text-zinc-200">
+                    <a href="#about" class="transition hover:text-blue-600 dark:hover:text-sky-400">About</a>
+                    <a href="#resume" class="transition hover:text-blue-600 dark:hover:text-sky-400">Resume</a>
+                    <a href="#portfolio" class="transition hover:text-blue-600 dark:hover:text-sky-400">Portfolio</a>
+                    <a href="#contact" class="transition hover:text-blue-600 dark:hover:text-sky-400">Contact</a>
+                </nav>
+
+                <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200/80 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-100 dark:hover:bg-zinc-800">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+
+            <button id="mobile-menu-toggle" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-zinc-200/80 bg-white/80 text-zinc-950 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:scale-105 dark:border-zinc-700/80 dark:bg-zinc-900/75 dark:text-slate-100">
+                <span class="sr-only">Open mobile menu</span>
+                <svg viewBox="0 0 24 24" class="h-6 w-6"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu absolute inset-x-4 top-full z-40 mt-2 flex-col gap-4 rounded-[2rem] border border-zinc-200/80 bg-white/90 p-5 shadow-2xl backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-950/95">
+            <div class="flex flex-col gap-3 text-base font-semibold uppercase tracking-[0.18em] text-zinc-900 dark:text-slate-100">
+                <a href="#about" class="block rounded-2xl px-4 py-3 transition hover:bg-zinc-100 dark:hover:bg-zinc-900" onclick="toggleMobileMenu()">About</a>
+                <a href="#resume" class="block rounded-2xl px-4 py-3 transition hover:bg-zinc-100 dark:hover:bg-zinc-900" onclick="toggleMobileMenu()">Resume</a>
+                <a href="#portfolio" class="block rounded-2xl px-4 py-3 transition hover:bg-zinc-100 dark:hover:bg-zinc-900" onclick="toggleMobileMenu()">Portfolio</a>
+                <a href="#contact" class="block rounded-2xl px-4 py-3 transition hover:bg-zinc-100 dark:hover:bg-zinc-900" onclick="toggleMobileMenu()">Contact</a>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80">
+                <div class="flex gap-3">
+                    <a href="https://github.com" target="_blank" rel="noreferrer" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-blue-400 hover:text-blue-600 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-300 dark:hover:text-sky-300">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-blue-400 hover:text-blue-600 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-300 dark:hover:text-sky-300">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noreferrer" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-blue-400 hover:text-blue-600 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-300 dark:hover:text-sky-300">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+                <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200/80 bg-zinc-100 text-zinc-700 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 dark:border-zinc-700/80 dark:bg-zinc-900/80 dark:text-slate-100 dark:hover:bg-zinc-800">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="relative min-h-[92vh] overflow-hidden bg-zinc-50 dark:bg-zinc-950">
+        <div class="mesh-bg absolute inset-0 opacity-90"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.55),transparent_45%)] dark:bg-[linear-gradient(180deg,rgba(15,23,42,0.6),transparent_40%)]"></div>
+        <div class="relative mx-auto flex min-h-[92vh] items-center justify-center px-4 py-24 sm:px-6 lg:px-8">
+            <div class="max-w-3xl text-center">
+                <p class="fade-in-up delay-100 text-sm uppercase tracking-[0.35em] text-blue-600 dark:text-sky-400 mb-6">Crafting scalable digital infrastructure</p>
+                <h1 class="hero-title fade-in-up delay-200 text-5xl font-extrabold tracking-tight text-zinc-950 dark:text-slate-100 sm:text-6xl lg:text-7xl">Ahmad Setiyanto</h1>
+                <p class="fade-in-up delay-300 mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300 sm:text-xl lg:text-2xl">
+                    Crafting Scalable Digital Solutions & Infrastructure Excellence
+                </p>
+                <a href="#portfolio" class="fade-in-up delay-300 mt-10 inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-[0_20px_50px_rgba(59,130,246,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-500">
+                    View My Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo(0,0)" class="fixed bottom-8 right-8 p-4 bg-blue-600 text-white rounded-full shadow-xl hover:scale-110 transition active:scale-95 z-50">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
+        });
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+        }
+
+        mobileMenuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>

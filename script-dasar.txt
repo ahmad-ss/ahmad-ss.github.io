@@ -1,0 +1,94 @@
+make a script for AI.
+script purpose : make website portfolio for github pages.
+website content :
+
+Header Section : Text Logo "Asen Madto" on the left side, menus on the right side, and social media button on the center.
+Home Section : Simple Hero text "Ahmad Setiyanto", add some cool tagline.
+About Section :
+"Dynamic Computer Science graduate with a strong foundation in web development and database management. Experienced in full-stack maintenance and versatile IT infrastructure support. A meticulous team player and fast learner dedicated to building scalable digital solutions and ensuring hardware operational excellence."
+Resume Section :
+1. Education
+Bachelor of Computer Science
+GPA: 3.17/4.0
+Universitas Dian Nuswantoro | 2016-2021
+2. Work Experience
+Web Developer
+IT Technician
+Lead the creation, debugging, and continuous maintenance of company web applications using PHP and React.
+IT Support & Infrastructure: Managed network maintenance, CCTV systems, and hardware procurement including PC assembly and Windows OS deployment.
+Managed end-to-end installation and configuration of hardware systems (PCs, laptops, printers) for corporate clients, ensuring immediate operational readiness.
+Varnion Teknologi Semesta | Semarang
+Xai International | Semarang
+Social Media Specialist
+Audited content and scripts to ensure 100% compliance with platform community guidelines.
+Gearinc Service Indonesia | Denpasar
+3. Skills
+Team Collaboration
+Microsoft Office
+Google/Lark Docs
+Fast Learner
+Meticulous
+ReactJS
+NextJS
+Javascript
+PHP
+CSS
+MySQL
+SQL
+PostgreSQL
+IBM Db2
+Oracle
+Portofolio Section : Make Courosel that fit to screen width, and has github link on the bottom right. For now makes 3 blank examples.
+Contact Section : split page in two, left side is contact me form and right side fill with call to action button, button list : WA Link, Email to Link, and Social Media Link.
+Footer Section : Text Logo "Asen Madto", and social media link.
+Other :
+Add "back to top" button that floating on the bottom right.
+
+website specification :
+Responsive design desktop, tablet, and mobile version.
+Use UnoCSS for styles.
+
+Since you're looking for a high-impact first impression, this prompt focuses on **glassmorphism**, **smooth transitions**, and the specific three-column layout for your header.
+
+Copy and paste this into your AI tool of choice:
+
+---
+
+### The Detailed "Header & Hero" Prompt
+
+**Role:** Act as a Senior Frontend Developer and UI Designer.
+
+**Objective:** Create a modern, responsive **Header** and **Hero Section** using **HTML** and **Tailwind CSS**. 
+
+**1. Header Specifications:**
+*   **Layout:** A sticky, 3-column desktop layout. 
+    *   **Left:** Text logo "Asen Madto" in a bold, high-contrast font.
+    *   **Center:** A row of social media icons (GitHub, LinkedIn, Instagram) with subtle hover scale effects.
+    *   **Right:** Navigation links (About, Resume, Portfolio, Contact) and a Dark/Light mode toggle switch.
+*   **Mobile Behavior:** On mobile, the social media icons and menus should move into a clean, slide-out hamburger menu.
+*   **Style:** Use a glassmorphism effect (`backdrop-blur-md` with a semi-transparent background).
+
+**2. Hero Section Specifications:**
+*   **Content:**
+    *   Main Heading: "Ahmad Setiyanto" in extra-large, bold typography (`text-6xl` or larger).
+    *   Tagline: "Crafting Scalable Digital Solutions & Infrastructure Excellence" in a secondary, slightly smaller font with a lighter weight.
+    *   CTA: A primary button labeled "View My Work" that scrolls to the portfolio.
+*   **Visuals:** 
+    *   Background: A clean, minimalist background. For Dark Mode, use a deep charcoal/black (`bg-zinc-950`) with a subtle mesh gradient in the corner. For Light Mode, use a soft white/gray (`bg-zinc-50`).
+    *   Animation: Add a subtle fade-in-up animation for the text components.
+
+**3. Technical Requirements:**
+*   **Framework:** Use standard Tailwind CSS utility classes.
+*   **Dark Mode:** Ensure every element has a `dark:` variant.
+*   **Responsiveness:** Use `hidden md:flex` and `block md:hidden` logic to ensure the layout transitions smoothly from mobile to desktop.
+*   **Output:** Provide the code in a single block with clear comments for each section.
+
+---
+
+### Pro-Tips for the Result:
+
+*   **For the "Cool Tagline":** If you want it to pop, ask the AI to apply a **Text Gradient**. For example: *"Apply a linear gradient to the tagline from Cyan-400 to Blue-600."*
+*   **For the Social Media Button:** To keep the header from feeling cluttered, ask the AI to use **Lucide-Icons** or **FontAwesome** for the center social buttons so they remain clean and recognizable.
+*   **UnoCSS Compatibility:** Since you mentioned UnoCSS earlier, this Tailwind prompt will work perfectly because UnoCSS is fully compatible with Tailwind's class logic.
+
+How does that tagline sound to you, or should we spice it up with something more specific to your Full-Stack and IT Infrastructure background?
